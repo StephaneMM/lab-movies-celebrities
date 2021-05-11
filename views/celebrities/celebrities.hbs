@@ -1,0 +1,17 @@
+<h2>Available celebrities</h2>
+
+{{#unless celeb.length}}
+<p>
+    Sorry, no celebrities in database yet !
+</p>
+{{/unless}}
+
+<ul>
+    {{#each celeb}}
+    <li> {{this.name}} has {{this.propellers}} propellers with a max speed of {{this.maxSpeed}} meters per second<br>  
+        <a href="/celebrities/{{this._id}}/edit">Edit</a>   /   <a href="/celebrities/{{this._id}}/delete">delete</a>
+        {{!-- <a href="/celebrities/u">delete</a> --}}
+        
+    </li>
+    {{/each}}
+</ul>

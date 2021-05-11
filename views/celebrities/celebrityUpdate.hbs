@@ -1,0 +1,19 @@
+<form method="post" action="/celebrities/{{celeb._id}}/edit">
+    {{!-- NAMES attributes ARE MANDATORY --}}
+    <p>
+        <label for="">name</label>
+        <input name="name" type="text" value="{{celeb.name}}">
+    </p>
+    <br>
+    <p>
+        <label for="">occupation</label>
+        <input name="occupation" type="text" value="{{celeb.occupation}}" >
+    </p>
+    <br>
+    <p>
+        <label for="">catch Phrase </label>
+        <input name="catchPhrase" type="text" value="{{celeb.catchPhrase}}">
+    </p>
+    <button>ok</button>
+</form>
+
