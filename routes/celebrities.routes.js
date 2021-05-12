@@ -3,7 +3,7 @@ const router = new express.Router();
 const CelebModel = require("../models/Celeb.model");
 const MoviesModel = require("../models/Movies.model");
 
-// GET - all albums
+// GET - all celeb
 router.get("/",(req, res, next) => {
   CelebModel.find()
   .then((dbResult) =>

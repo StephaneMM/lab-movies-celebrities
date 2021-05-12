@@ -1,0 +1,23 @@
+<h2>Available movies</h2>
+
+{{#unless movies.length}}
+<p>
+    Sorry, no movies in database yet !
+</p>
+{{/unless}}
+
+<ul>
+    {{#each movies}}
+    <li> 
+        
+        {{this.name}} <br>{{this.genre}}<br>{{this.plot}} <br>  
+        {{!-- {{this.cast}} --}}
+        
+        <a href="/movies/{{this._id}}/edit">Edit</a>   /   <a href="/movies/{{this._id}}/delete">delete</a>
+
+    </li>
+    {{/each}}
+</ul>
+
+
+<button ><a href="/movies/new">Add movies</a></button>

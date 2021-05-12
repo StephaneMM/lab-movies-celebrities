@@ -1,18 +1,18 @@
-<form method="post" action="/drones/{{drone._id}}/edit">
+<form method="post" action="/movies/{{movie._id}}/edit">
     {{!-- NAMES attributes ARE MANDATORY --}}
     <p>
-        <label for="">name</label>
-        <input name="name" type="text" value="{{drone.name}}">
+        <label for="">title</label>
+        <input name="title" type="text" value="{{movie.title}}">
     </p>
     <br>
     <p>
-        <label for="">propellers</label>
-        <input name="propellers" type="number" value="{{drone.propellers}}" pattern="[0-9]+">
+        <label for="">genre</label>
+        <input name="genre" type="text" value="{{movie.genre}}" >
     </p>
     <br>
     <p>
-        <label for="">maxSpeed </label>
-        <input name="maxSpeed" type="number" value="{{drone.maxSpeed}}">
+        <label for="">plot </label>
+        <input name="plot" type="text" value="{{movie.plot}}">
     </p>
     <button>ok</button>
 </form>
