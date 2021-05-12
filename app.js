@@ -1,5 +1,5 @@
 require("dotenv").config();
-require("./helpers/hbs");
+// require("./helpers/hbs");
 
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -31,22 +31,23 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
-// const index = require('./routes/index');
-// app.use('/', index);
+// Knowing:
+// const index = require('./routes/index'); <=> app.use('/', index);
 //      |  |  |
 //      V  V  V
-app.use("/", require("./routes/index.routes")); //??????????
-
-// connect routers
-const indexRouter = require("./routes/index.routes");
-const MoviesRouter = require("./routes/movies.routes");
-const CelebRouter = require("./routes/celebrities.routes");
+// // connect routers
+// const indexRouter = require("./routes/index.routes");
+// const MoviesRouter = require("./routes/movies.routes");
+// const CelebRouter = require("./routes/celebrities.routes");
+// // use routers
+// app.use("/", indexRouter); // use routers
+// app.use("/movies", MoviesRouter); // use movie router
+// app.use("/celebrities", CelebRouter); // use celeb router
 //      |  |  |
 //      V  V  V
-// use routers
-app.use("/", indexRouter); // use routers
-app.use("/movies", MoviesRouter); // use artist router
-app.use("/celebrities", CelebRouter); // use album router
+app.use("/", require("./routes/index.routes"));
+app.use("/movies", require("./routes/movies.routes"));
+app.use("/celebrities", require("./routes/celebrities.routes"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
